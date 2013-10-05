@@ -1,0 +1,42 @@
+v1.0
+
+Not released on CRAN.
+
+v1.1
+
+CRAN legal- passed all checks.
+
+v1.2
+
+Bug Fixes:
+
+rgl.sphgrid label now display properly- previously they was a radians/ degrees mismatch.
+
+Features:
+
+Major circles of 0 long and 0 lat are now a slightly darker grey for clarity.
+
+Can now specify the colour of longitude and latitude labels.
+
+v1.3
+
+Bug fixes:
+
+car2sph wasn't working properly when matrices of xyz were being passed. Now fixed.
+
+v1.4
+
+Package name in the manual was given as celsphere, changed to sphereplot.
+
+Added the option of creating great circles on rgl.sphgrid.
+
+Added option to plot ecliptic plane + Sun's location.
+
+Added option to plot Galactic plane + MW centre.
+
+Changed default coordinate type to degrees throughout (was a mix before).
+
+v1.5
+
+Added radius label and vector.
+
