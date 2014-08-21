@@ -8,8 +8,9 @@ Create a spherical plotting grid
 Creates a spherical plotting grid, within which further points can be added. Useful for astronomical plotting in particular, where this becomes the celestial sphere.
 }
 \usage{
-rgl.sphgrid(radius = 1, col.long='red', col.lat='blue', deggap = 15, longtype = "H",
-add = FALSE, radaxis=TRUE, radlab='Radius')
+rgl.sphgrid(radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',
+col.majgrid='grey50',col.mingrid='grey', deggap = 15, longtype = "H", add = FALSE,
+radaxis=TRUE, radlab='Radius')
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,6 +25,15 @@ The colour for longitude labels.
 }
   \item{col.lat}{
 The colour for latitude labels.
+}
+  \item{col.rad}{
+The colour for radius labels.
+}
+  \item{col.majgrid}{
+The colour for major grid lines.
+}
+  \item{col.mingrid}{
+The colour for minor grid lines.
 }
   \item{longtype}{
 Specifies if longitudes should be labelled in hours (H- default) or degrees (D).

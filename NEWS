@@ -42,3 +42,7 @@ Added radius label and vector.
 
 Fixed the pointing latitude limits (these weren't being passed correctly previously)
 
+v1.6
+
+Added col.rad, col.majgrid and col.mingrid options to rgl.sphgrid.
+
