@@ -44,5 +44,5 @@ Fixed the pointing latitude limits (these weren't being passed correctly previou
 
 v1.6
 
-Added col.rad, col.majgrid and col.mingrid options to rgl.sphgrid.
+Added col.rad, col.axes and col.grid options to rgl.sphgrid.
 

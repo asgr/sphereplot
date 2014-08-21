@@ -9,7 +9,7 @@ Creates a spherical plotting grid, within which further points can be added. Use
 }
 \usage{
 rgl.sphgrid(radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',
-col.majgrid='grey50',col.mingrid='grey', deggap = 15, longtype = "H", add = FALSE,
+col.axes='grey50',col.grid='grey', deggap = 15, longtype = "H", add = FALSE,
 radaxis=TRUE, radlab='Radius')
 }
 %- maybe also 'usage' for other objects documented here.
@@ -29,11 +29,11 @@ The colour for latitude labels.
   \item{col.rad}{
 The colour for radius labels.
 }
-  \item{col.majgrid}{
-The colour for major grid lines.
+  \item{col.axes}{
+The colour for axes (i.e. grid line next to labels).
 }
-  \item{col.mingrid}{
-The colour for minor grid lines.
+  \item{col.grid}{
+The colour for grid lines.
 }
   \item{longtype}{
 Specifies if longitudes should be labelled in hours (H- default) or degrees (D).
