@@ -10,7 +10,7 @@ Creates a spherical plotting grid, within which further points can be added. Use
 \usage{
 rgl.sphgrid(radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',
 col.axes='grey50',col.grid='grey', deggap = 15, longtype = "H", add = FALSE,
-radaxis=TRUE, radlab='Radius')
+radaxis=TRUE, radlab='Radius', col.radlab='black')
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -21,13 +21,13 @@ The radial extent of the spherical grid.
 The attempted separation between sherical grid lines in degrees.
 }
   \item{col.long}{
-The colour for longitude labels.
+The colour for longitude axis value labels.
 }
   \item{col.lat}{
-The colour for latitude labels.
+The colour for latitude axis value labels.
 }
   \item{col.rad}{
-The colour for radius labels.
+The colour for radius axis value labels.
 }
   \item{col.axes}{
 The colour for axes (i.e. grid line next to labels).
@@ -46,6 +46,9 @@ Logical determining whether the sphere radius vector is drawn and labeled (defau
 }
   \item{radlab}{
 If 'radaxis' is TRUE then the 'radlab' parameter determines the name of the label.
+}
+  \item{col.radlab}{
+Colour of the radius title.
 }
 }
 \details{
