@@ -10,7 +10,9 @@ rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunra
         }
         yearfrac = (yearfrac * 2 * pi/365)*180/pi
         sunloc = cbind(yearfrac,sin(yearfrac*pi/180)*23.4,radius)
+        .skip()
         plot3d(sph2car(sunloc,deg=TRUE),type=type,col=col,radius=sunrad,add=TRUE)
+        .draw()
     }
     if(addeclip){rgl.sphcirc(CrossEq = 0, PeakDec = 23.4,col=col,radius=radius)}
 }

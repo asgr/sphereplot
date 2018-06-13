@@ -1,8 +1,8 @@
 Package: sphereplot
 Type: Package
 Title: Spherical plotting
-Version: 1.6
-Date: 2014-08-21
+Version: 1.6.1
+Date: 2018-06-12
 Author: Aaron Robotham
 Maintainer: Aaron Robotham <aaron.robotham@uwa.edu.au>
 Description: Various functions for creating spherical coordinate system plots via extensions to rgl.

@@ -44,5 +44,11 @@ Fixed the pointing latitude limits (these weren't being passed correctly previou
 
 v1.6
 
-Added col.rad, col.axes and col.grid options to rgl.sphgrid.
+Added col.rad, col.axes, col.grid, col.radlab options to rgl.sphgrid.
+
+v1.6.1
+
+Added some redraw skips to speed up the initial plotting.
+
+Fixed newer CRAN checks, including the NAMESPACE importing.
 

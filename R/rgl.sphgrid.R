@@ -1,7 +1,11 @@
+.skip=function(){par3d(skipRedraw=TRUE)}
+.draw=function(){par3d(skipRedraw=FALSE)}
+
 rgl.sphgrid <-
 function (radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',col.axes='grey50',col.grid='grey', deggap = 15, longtype='H', add=FALSE, radaxis=TRUE, radlab='Radius',col.radlab='black') 
 {
-    if(add==F){open3d()}
+    if(add==FALSE){open3d()}
+  .skip()
     for(lat in seq(-90,90,by=deggap)){
       if(lat==0){col=col.axes}else{col=col.grid}
       plot3d(sph2car(long=seq(0,360,len=100),lat=lat,radius=radius,deg=T),col=col,add=T,type='l')
@@ -16,6 +20,7 @@ function (radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',col.ax
     rgl.sphtext(long=seq(0,360-deggap,by=deggap),lat=0, radius=radius, text = seq(0,360-deggap,by=deggap)/scale, deg=TRUE, col = col.long)
 
     if(radaxis){
+      .skip()
         radpretty=pretty(c(0,radius))
         radpretty=radpretty[radpretty<=radius]
         lines3d(c(0,0),c(0,max(radpretty)),c(0,0),col=col.axes)
@@ -25,5 +30,6 @@ function (radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',col.ax
         }
         text3d(0,radius/2,-radius/25,radlab,col=col.radlab)
     }
+    .draw()
 }
 
