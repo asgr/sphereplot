@@ -9,7 +9,7 @@ This function overplots the ecliptic plane on the default Equatorial coordinates
 }
 \usage{
 rgl.sphsun(Ydate = c(3, 21), radius = 1, col = "yellow", type = "s", sunrad = 0.02,
-addeclip = TRUE, addsun=TRUE)
+addeclip = TRUE, addsun = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,7 +23,7 @@ The radius at which to draw the ecliptic plane and Sun.
 The colour of the ecliptic line and for the Sun.
 }
   \item{type}{
-Rgl plot type for the Sun, default is to draw it as a 3D sphere, i.e. type 's'.
+RGL plot type for the Sun, default is to draw it as a 3D sphere, i.e. type 's'.
 }
   \item{sunrad}{
 The radius of the Sun if plotted as a sphere.

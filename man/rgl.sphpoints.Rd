@@ -8,7 +8,7 @@ Add points to spherical plots
 This function allows the native plotting of spherical coordinates (in degrees of radians) and is expected to be used in conjunction with rgl.sphgrid, which produces the spherical grid.
 }
 \usage{
-rgl.sphpoints(long, lat, radius, deg = TRUE,col='black', ...)
+rgl.sphpoints(long, lat, radius, deg = TRUE, col = 'black', ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

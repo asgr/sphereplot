@@ -8,7 +8,7 @@ Add text to spherical plot
 Adds generic text to a spherical coordinate plot.
 }
 \usage{
-rgl.sphtext(long, lat, radius, text, deg = TRUE, col='black', ...)
+rgl.sphtext(long, lat, radius, text, deg = TRUE, col = 'black', ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

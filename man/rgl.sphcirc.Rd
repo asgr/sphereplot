@@ -8,8 +8,7 @@ Great circle generator
 Function to generate a new great circle with arbitrary inclinations and radius.
 }
 \usage{
-rgl.sphcirc(CrossEq = 0, PeakDec = 0, radius = 1, deg = TRUE,
-col = "black", ...)
+rgl.sphcirc(CrossEq = 0, PeakDec = 0, radius = 1, deg = TRUE, col = "black", ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

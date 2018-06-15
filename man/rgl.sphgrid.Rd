@@ -8,9 +8,9 @@ Create a spherical plotting grid
 Creates a spherical plotting grid, within which further points can be added. Useful for astronomical plotting in particular, where this becomes the celestial sphere.
 }
 \usage{
-rgl.sphgrid(radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',
-col.axes='grey50',col.grid='grey', deggap = 15, longtype = "H", add = FALSE,
-radaxis=TRUE, radlab='Radius', col.radlab='black')
+rgl.sphgrid(radius = 1, col.long = 'red', col.lat = 'blue', col.rad = 'darkgreen',
+col.axes = 'grey50', col.grid = 'grey', deggap = 15, longtype = "H", add = FALSE,
+radaxis = TRUE, radlab = 'Radius', col.radlab = 'black')
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
