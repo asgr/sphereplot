@@ -1,4 +1,11 @@
-rgl.sphseg = function(long1, lat1, long2, lat2, radius=1, col='black', res=1000, ...){
+rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black', res=1000, ...){
+  if(deg==FALSE){
+    long1 = long1 * 180/pi
+    lat1 = lat1 * 180/pi
+    long2 = long2 * 180/pi
+    lat2 = lat2 * 180/pi
+  }
+  
   if(long2 - long1 > 180){
     long2 = long2 - 360
   }
@@ -39,5 +46,5 @@ rgl.sphseg = function(long1, lat1, long2, lat2, radius=1, col='black', res=1000,
   
   lines3d(segment, aspect = TRUE, col = col, ...)
   
-  return(invisible(list(great_circle=rotdata, segment=segment, CrossEq=CrossEq * 180/pi, PeakDec=PeakDec * 180/pi, AngSep=AngSep, CrossProd=CrossProd)))
+  return(invisible(list(great_circle=rotdata, segment=segment, CrossEq=CrossEq*180/pi, PeakDec=PeakDec*180/pi, AngSep=AngSep, CrossProd=CrossProd)))
 }
