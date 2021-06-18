@@ -9,17 +9,17 @@ rgl.sphseg = function(long1, lat1, long2, lat2, radius=1, col='black', res=1000,
   v = sph2car(long2, lat2, 1)
   
   CrossProd = c(
-    + (u[2] * v[3]) - (v[2] * u[3]), #i
-    - (u[1] * v[3]) - (v[1] * u[3]), #j
-    + (u[1] * v[2]) - (v[1] * u[2])  #k
+    + ((u[2] * v[3]) - (v[2] * u[3])), #i
+    - ((u[1] * v[3]) - (v[1] * u[3])), #j
+    + ((u[1] * v[2]) - (v[1] * u[2]))  #k
   )
   
   AngSep = asin(sqrt(CrossProd[1]^2 + CrossProd[2]^2 + CrossProd[3]^2)) * 180/pi
   
-  PeakDec = atan2(CrossProd[3], sqrt(CrossProd[1]^2 + CrossProd[2]^2))
-  CrossEq = atan2(CrossProd[2], CrossProd[1])# Eq crossing point
+  PeakDec = atan2(sqrt(CrossProd[1]^2 + CrossProd[2]^2), CrossProd[3])
+  CrossEq = atan2(CrossProd[2], CrossProd[1]) + pi/2# Eq crossing point
   
-  rotdata = rotate3d(cbind(cos(seq(-pi, pi, len = 100)), 0, sin(seq(-pi, pi, len = 100))),
+  rotdata = rotate3d(cbind(cos(seq(-pi, pi, len = res)), 0, sin(seq(-pi, pi, len = res))),
                      x = 1,
                      y = 0, 
                      z = 0,
@@ -28,7 +28,7 @@ rgl.sphseg = function(long1, lat1, long2, lat2, radius=1, col='black', res=1000,
   rotdata = rotate3d(rotdata, x = 0, y = 0, z = 1, angle = -CrossEq) * radius
   
   rotdata_sph = car2sph(rotdata)
-  rotdata_sph[,1] = rotdata_sph[,1] %% 360
+  rotdata_sph[,1] = rotdata_sph[,1]
   rotdata_sph[rotdata_sph[,2] < -90, 2] = rotdata_sph[rotdata_sph[,2] < -90, 2] + 180
   rotdata_sph[rotdata_sph[,2] > 90, 2] = rotdata_sph[rotdata_sph[,2] > 90, 2] - 180
   
