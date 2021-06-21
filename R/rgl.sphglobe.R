@@ -14,7 +14,7 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
       if(radius=='auto'){
         radius = 1
       }
-      texture = system.file("extdata", 'sky2_mod.png', package="sphereplot")
+      texture = system.file("extdata", 'sky2.png', package="sphereplot")
     }else if(type=='world1' | type=='earth1'){
       longtype = 'D'
       if(radius=='auto'){
@@ -27,12 +27,6 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
         radius = 6371
       }
       texture = system.file("extdata", 'world2.png', package="sphereplot")
-    }else if(type=='sky1'){
-      longtype = 'D'
-      if(radius=='auto'){
-        radius = 6371
-      }
-      texture = system.file("extdata", 'sky1.png', package="sphereplot")
     }else if(type=='cmb' | type=='planck'){
       longtype = 'H'
       if(radius=='auto'){
