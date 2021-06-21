@@ -61,12 +61,12 @@ Aaron Robotham
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-rgl.globe()
-rgl.sphseg(20,30,40,60)
+rgl.sphglobe('world1')
+rgl.sphline(20,30,40,60)
 rgl.sphpoints(c(20,40), c(30,60), size=10)
-rgl.sphseg(340,-20,80,30)
+rgl.sphline(340,-20,80,30)
 rgl.sphpoints(c(340,80), c(-20,30), size=10)
-rgl.sphseg(30,40,80,-60)
+rgl.sphline(30,40,80,-60)
 rgl.sphpoints(c(30,80), c(40,-60), size=10)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
