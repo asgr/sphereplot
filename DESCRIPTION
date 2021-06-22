@@ -7,4 +7,4 @@ Author: Aaron Robotham
 Maintainer: Aaron Robotham <aaron.robotham@uwa.edu.au>
 Description: Various functions for creating spherical coordinate system plots via extensions to rgl.
 License: GPL-3
-Depends: rgl
+Depends: rgl, checkmate

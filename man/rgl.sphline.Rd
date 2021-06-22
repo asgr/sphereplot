@@ -9,6 +9,7 @@ Given two points on the sphere, this function will draw the connecting great cir
 }
 \usage{
 rgl.sphline(long1, lat1, long2, lat2, radius = 1, deg = TRUE, col = "black", res = 1000, ...)
+rgl.sphlines(long, lat, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,6 +24,12 @@ Numeric scalar; longitude of second location.
 }
   \item{lat2}{
 Numeric scalar; latitude of second location.
+}
+  \item{long}{
+Numeric vector; longitudes on plotting path.
+}
+  \item{lat}{
+Numeric vector; latitudes  on plotting path.
 }
   \item{radius}{
 Numeric scalar; radius of segment to draw.
@@ -41,10 +48,12 @@ Other arguments to pass to \code{\link{lines3d}}.
 }
 }
 \details{
-Nothing to see here.
+The main difference between \code{rgl.sphline} and \code{rgl.sphlines} is that the former takes scalar inputs but gives you the great outputs listed below, whilst \code{rgl.sphlines} can take vector inputs and plot complicated paths, but provides no return from the function.
 }
 \value{
-Called for the side effect of plotting on the current sphere. Also returns various diagnostic outputs:
+\code{rgl.sphline} and \code{rgl.sphlines} are called for the side effect of plotting on the current sphere.
+
+\code{rgl.sphline} also returns various diagnostic outputs:
 
 \item{great_circle}{Cartesian coordinates of the full great circle.}
 \item{segment}{Cartesian coordinates of the great circlen segment.}

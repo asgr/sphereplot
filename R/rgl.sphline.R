@@ -1,4 +1,9 @@
 rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black', res=1000, ...){
+  assert_numeric(long1, lower=-180, upper=360, min.len=1, max.len=1)
+  assert_numeric(long2, lower=-180, upper=360, min.len=1, max.len=1)
+  assert_numeric(lat1, lower=-90, upper=90, min.len=1, max.len=1)
+  assert_numeric(lat2, lower=-90, upper=90, min.len=1, max.len=1)
+  
   long1 = long1 %% 360
   long2 = long2 %% 360
   
@@ -9,12 +14,8 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
     lat2 = lat2 * 180/pi
   }
   
-  if(long2 - long1 > 180){
-    long2 = long2 - 360
-  }
-  if(long1 - long2 > 180){
-    long1 = long1 - 360
-  }
+  long1[long1 - long2 > 180] = long1[long1 - long2 > 180] - 360
+  long2[long2 - long1 > 180] = long2[long2 - long1 > 180] - 360
   
   u = sph2car(long1, lat1, 1)
   v = sph2car(long2, lat2, 1)
@@ -26,7 +27,7 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
   )
   
   AngSep = asin(sqrt(CrossProd[1]^2 + CrossProd[2]^2 + CrossProd[3]^2)) * 180/pi
-  
+  Sep3D = (u[1] - v[1])^2 + (u[2] - v[2])^2 + (u[3] - v[3])^2
   PeakDec = atan2(sqrt(CrossProd[1]^2 + CrossProd[2]^2), CrossProd[3])
   CrossEq = atan2(CrossProd[2], CrossProd[1]) + pi/2# Eq crossing point
   
@@ -43,11 +44,14 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
   rotdata_sph[rotdata_sph[,2] < -90, 2] = rotdata_sph[rotdata_sph[,2] < -90, 2] + 180
   rotdata_sph[rotdata_sph[,2] > 90, 2] = rotdata_sph[rotdata_sph[,2] > 90, 2] - 180
   
-  sel_long = (rotdata_sph[,1] >= min(long1, long2) & rotdata_sph[,1] <= max(long1, long2)) | (rotdata_sph[,1] + 360 >= min(long1, long2) & rotdata_sph[,1] + 360 <= max(long1, long2))
-  sel_lat = rotdata_sph[,2] >= min(lat1, lat2) & rotdata_sph[,2] <= max(lat1, lat2)
+  #sel_long = (rotdata_sph[,1] >= min(long1, long2) & rotdata_sph[,1] <= max(long1, long2)) | (rotdata_sph[,1] + 360 >= min(long1, long2) & rotdata_sph[,1] + 360 <= max(long1, long2))
+  #sel_lat = rotdata_sph[,2] >= min(lat1, lat2) & rotdata_sph[,2] <= max(lat1, lat2)
   
-  segment = rotdata[sel_long & sel_lat,]
-  ordercheck = rotdata_sph[sel_long & sel_lat,]
+  sel_data = (rotdata[,1] - u[1])^2 + (rotdata[,2] - u[2])^2 + (rotdata[,3] - u[3])^2 < Sep3D
+  sel_data = sel_data & ((rotdata[,1] - v[1])^2 + (rotdata[,2] - v[2])^2 + (rotdata[,3] - v[3])^2 < Sep3D)
+    
+  segment = rotdata[sel_data,]
+  ordercheck = rotdata_sph[sel_data,]
   
   if(max(ordercheck[,1]) - min(ordercheck[,1]) > 180){
     ordercheck[,1] = ordercheck[,1] %% 360
@@ -64,4 +68,11 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
   lines3d(segment, aspect = TRUE, col = col, ...)
   
   return(invisible(list(great_circle=rotdata, segment=segment, CrossEq=CrossEq*180/pi, PeakDec=PeakDec*180/pi, AngSep=AngSep, CrossProd=CrossProd)))
+}
+
+rgl.sphlines = function(long, lat, ...){
+  for(i in 1:(length(long1) - 1)){
+    rgl.sphline(long[i], lat[i], long[i+1], lat[i+1], ...)
+  }
+  return(NULL)
 }
