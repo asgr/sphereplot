@@ -14,7 +14,7 @@ rgl.sphglobe(type = "sky1", radius = 1, res = 100, alpha = 0.99999, grid = TRUE,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{type}{
-Character scalar; used if \option{texture} is NULL. One of: sky1 (low res) / sky2 (high res) / world1 (Light) / world2 (Dark) / cmb (Planck).
+Character scalar; used if \option{texture} is NULL. One of: sky1 (low res) / sky2 (high res) / world1 (Light) / world2 (Dark) / world3 (simple) / cmb (Planck).
 }
   \item{radius}{
 Numeric scalar; radius to make the globe. If set to 'auto' it will be 1 for sky1 / sky2; 6371 for world1 / world2 (Earth radius in km); 13.8 for CMB (age of the Universe in Gyrs).

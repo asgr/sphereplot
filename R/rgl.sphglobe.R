@@ -4,30 +4,42 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
     type = tolower(type)
     
     if(type=='sky1'){
+      longshift = 0
       longtype = 'D'
       if(radius=='auto'){
         radius = 1
       }
       texture = system.file("extdata", 'sky1.png', package="sphereplot")
     }else if(type=='sky2'){
+      longshift = 0
       longtype = 'D'
       if(radius=='auto'){
         radius = 1
       }
       texture = system.file("extdata", 'sky2.png', package="sphereplot")
     }else if(type=='world1' | type=='earth1'){
+      longshift = 0
       longtype = 'D'
       if(radius=='auto'){
         radius = 6371
       }
       texture = system.file("extdata", 'world1.png', package="sphereplot")
     }else if(type=='world2' | type=='earth2'){
+      longshift = 0
       longtype = 'D'
       if(radius=='auto'){
         radius = 6371
       }
       texture = system.file("extdata", 'world2.png', package="sphereplot")
+    }else if(type=='world3' | type=='earth3'){
+      longshift = 10
+      longtype = 'D'
+      if(radius=='auto'){
+        radius = 6371
+      }
+      texture = system.file("extdata", 'world3.png', package="sphereplot")
     }else if(type=='cmb' | type=='planck'){
+      longshift = 0
       longtype = 'H'
       if(radius=='auto'){
         radius = 13.8
@@ -36,7 +48,7 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
     }
   }
   
-  long = seq(-180, 180, len=res)*pi/180
+  long = seq(-180 + longshift, 180 + longshift, len=res)*pi/180
   lat = seq(90,-90, len=res)*pi/180
 
   # if(type=='cmb'){
