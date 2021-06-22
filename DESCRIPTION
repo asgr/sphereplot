@@ -1,7 +1,7 @@
 Package: sphereplot
 Type: Package
 Title: Spherical plotting
-Version: 2.0.0
+Version: 2.0.1
 Date: 2021-06-22
 Author: Aaron Robotham
 Maintainer: Aaron Robotham <aaron.robotham@uwa.edu.au>

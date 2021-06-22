@@ -1,8 +1,10 @@
 \name{rgl.sphline}
 \alias{rgl.sphline}
+\alias{rgl.sphlines}
+
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Draw Great Circle Line Segment
+Draw Great Circle Line Segments  
 }
 \description{
 Given two points on the sphere, this function will draw the connecting great circle minimum distance line connecting them.

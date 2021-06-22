@@ -71,7 +71,7 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
 }
 
 rgl.sphlines = function(long, lat, ...){
-  for(i in 1:(length(long1) - 1)){
+  for(i in 1:(length(long) - 1)){
     rgl.sphline(long[i], lat[i], long[i+1], lat[i+1], ...)
   }
   return(NULL)

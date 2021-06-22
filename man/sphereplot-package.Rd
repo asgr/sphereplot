@@ -12,7 +12,7 @@ Various low level and high level routines for generate spherical plots. Includes
 \tabular{ll}{
 Package: \tab sphereplot\cr
 Type: \tab Package\cr
-Version: \tab 2.0.0\cr
+Version: \tab 2.0.1\cr
 Date: \tab 2021-06-22\cr
 License: \tab GPL-3\cr
 }
