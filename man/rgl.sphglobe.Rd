@@ -54,6 +54,7 @@ Aaron Robotham
 \examples{
 rgl.sphglobe('world1')
 rgl.sphglobe('world2')
+rgl.sphglobe('world3')
 rgl.sphglobe('sky1')
 rgl.sphglobe('sky2')
 rgl.sphglobe('cmb')
