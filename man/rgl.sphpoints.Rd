@@ -8,21 +8,21 @@ Add points to spherical plots
 This function allows the native plotting of spherical coordinates (in degrees of radians) and is expected to be used in conjunction with rgl.sphgrid, which produces the spherical grid.
 }
 \usage{
-rgl.sphpoints(long, lat, radius, deg = TRUE, col = 'black', ...)
+rgl.sphpoints(long, lat, radius=1, deg = TRUE, col = 'black', ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{long}{
-longitude values, can also contain a matrix of long, lat and radius (in that order).
+Numeric vector; longitude values, can also contain a matrix of long, lat and radius (in that order).
 }
   \item{lat}{
-latitude values.
+Numeric vector; latitude values.
 }
   \item{radius}{
-radius values.
+Numeric vector; radius values.
 }
   \item{deg}{
-Specifies if input is in degrees (default) or radians.
+Logical; specifies if input is in degrees (default) or radians.
 }
   \item{col}{
 Specifies point colour.

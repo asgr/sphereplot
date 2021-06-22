@@ -1,5 +1,4 @@
-rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunrad=0.02, addeclip=TRUE, addsun=TRUE) 
-{
+rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunrad=0.02, addeclip=TRUE, addsun=TRUE){
     if(addsun){
         if(Ydate[1]=='get'){Ydate=c(format(Sys.Date(), "%m"),format(Sys.Date(), "%d"));Ydate=as.numeric(Ydate)}
         year = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
