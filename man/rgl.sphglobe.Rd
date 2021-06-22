@@ -39,10 +39,14 @@ Extra arguments for \code{\link{rgl.sphgrid}}.
 }
 }
 \details{
-Run for the side effect of generating a pretty globe to plot ontop of.
+Run for the side effect of generating a pretty globe to plot on top of.
+
+The sky and World images are in the equatorial system, but I can only find Planck maps using a Galactic projection, so this is not in equatorial! But for giving the general impression of the CMB background, this might not matter.
+
+All images were found online under open licenses. In particular the sky images were provided by NASA.
 }
 \value{
-Run for the side effect of generating a pretty globe to plot ontop of.
+Run for the side effect of generating a pretty globe to plot on top of.
 }
 \author{
 Aaron Robotham
