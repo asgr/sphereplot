@@ -1,8 +1,8 @@
 .skip=function(){par3d(skipRedraw=TRUE)}
 .draw=function(){par3d(skipRedraw=FALSE)}
 
-rgl.sphgrid = function (radius = 1, col.long='red', col.lat='blue', col.rad='darkgreen',
-                        col.axes='grey50',col.grid='grey', deggap = 15, longtype='H', add=FALSE, 
+rgl.sphgrid = function (radius = 1, axis.val=TRUE, col.long='red', col.lat='blue', col.rad='darkgreen',
+                        col.axes='grey50', col.grid='grey', deggap = 15, longtype='H', add=FALSE, 
                         radaxis=TRUE, radlab='Radius',col.radlab='black'){
     if(add==FALSE){open3d()}
   .skip()
@@ -16,8 +16,10 @@ rgl.sphgrid = function (radius = 1, col.long='red', col.lat='blue', col.rad='dar
     }
     if(longtype=='H'){scale=15}
     if(longtype=='D'){scale=1}
-    rgl.sphtext(long=0,lat=seq(-90,90,by=deggap), radius=radius*1.05, text = seq(-90,90,by=deggap), deg=TRUE, col = col.lat)
-    rgl.sphtext(long=seq(0,360-deggap,by=deggap),lat=0, radius=radius*1.05, text = seq(0,360-deggap,by=deggap)/scale, deg=TRUE, col = col.long)
+    if(axis.val){
+      rgl.sphtext(long=0,lat=seq(-90,90,by=deggap), radius=radius*1.05, text = seq(-90,90,by=deggap), deg=TRUE, col = col.lat)
+      rgl.sphtext(long=seq(0,360-deggap,by=deggap),lat=0, radius=radius*1.05, text = seq(0,360-deggap,by=deggap)/scale, deg=TRUE, col = col.long)
+    }
 
     if(radaxis){
       .skip()
@@ -28,7 +30,9 @@ rgl.sphgrid = function (radius = 1, col.long='red', col.lat='blue', col.rad='dar
             lines3d(c(0,0),c(radpretty[i],radpretty[i]),c(0,0,radius/50),col=col.axes)
             text3d(0,radpretty[i],radius/15,radpretty[i],col=col.rad)
         }
-        text3d(0,radius/2,-radius/25,radlab,col=col.radlab)
+        if(axis.val){
+          text3d(0,radius/2,-radius/25,radlab,col=col.radlab)
+        }
     }
     .draw()
 }

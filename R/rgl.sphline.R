@@ -76,3 +76,15 @@ rgl.sphlines = function(long, lat, ...){
   }
   return(NULL)
 }
+
+rgl.seglong = function(long1, long2, lat, radius=1, deg=TRUE, col='black', res=1000, ...){
+  long_seq = seq(long1, long2, by=360/res)
+  
+  lines3d(sph2car(long_seq, lat, radius, deg=deg), aspect = TRUE, col = col, ...)
+}
+
+rgl.seglat = function(long, lat1, lat2, radius=1, deg=TRUE, col='black', res=1000, ...){
+  lat_seq = seq(lat1, lat2, by=360/res)
+  
+  lines3d(sph2car(long, lat_seq, radius, deg=deg), aspect = TRUE, col = col, ...)
+}

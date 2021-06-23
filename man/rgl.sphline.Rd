@@ -1,17 +1,20 @@
 \name{rgl.sphline}
 \alias{rgl.sphline}
 \alias{rgl.sphlines}
-
+\alias{rgl.seglong}
+\alias{rgl.seglat}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Draw Great Circle Line Segments  
+Draw Great and Minor Circle Line Segments  
 }
 \description{
-Given two points on the sphere, this function will draw the connecting great circle minimum distance line connecting them.
+Given points on a sphere, these functions will draw the connecting great and minor circle minimum distance line connecting them.
 }
 \usage{
 rgl.sphline(long1, lat1, long2, lat2, radius = 1, deg = TRUE, col = "black", res = 1000, ...)
 rgl.sphlines(long, lat, ...)
+rgl.seglong(long1, long2, lat, radius=1, deg=TRUE, col='black', res=1000, ...)
+rgl.seglat(long, lat1, lat2, radius=1, deg=TRUE, col='black', res=1000, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -54,6 +57,8 @@ The main difference between \code{rgl.sphline} and \code{rgl.sphlines} is that t
 }
 \value{
 \code{rgl.sphline} and \code{rgl.sphlines} are called for the side effect of plotting on the current sphere.
+
+\code{rgl.seglong} draws longitude lines of constant latitude (technically minor circle arcs), whilst \code{rgl.seglong} draws latitude lines of constant longitude (grear circle arcs).
 
 \code{rgl.sphline} also returns various diagnostic outputs:
 

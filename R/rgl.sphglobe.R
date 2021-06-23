@@ -38,13 +38,20 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
         radius = 6371
       }
       texture = system.file("extdata", 'world3.png', package="sphereplot")
-    }else if(type=='cmb' | type=='planck'){
+    }else if(type=='cmb' | type=='cmb_gal'){
       longshift = 0
       longtype = 'H'
       if(radius=='auto'){
         radius = 13.8
       }
-      texture = system.file("extdata", 'cmb.png', package="sphereplot")
+      texture = system.file("extdata", 'cmb_gal.png', package="sphereplot")
+    }else if(type=='cmb_eq'){
+      longshift = 0
+      longtype = 'H'
+      if(radius=='auto'){
+        radius = 13.8
+      }
+      texture = system.file("extdata", 'cmb_eq.png', package="sphereplot")
     }
   }
   
