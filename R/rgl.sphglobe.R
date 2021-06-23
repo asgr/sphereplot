@@ -2,7 +2,6 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
   
   if(is.null(texture)){
     type = tolower(type)
-    
     if(type=='sky1'){
       longshift = 0
       longtype = 'D'
@@ -52,6 +51,15 @@ rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TR
         radius = 13.8
       }
       texture = system.file("extdata", 'cmb_eq.png', package="sphereplot")
+    }else if(type=='moon'){
+      longshift = 0
+      longtype = 'D'
+      if(radius=='auto'){
+        radius = 1
+      }
+      texture = system.file("extdata", 'moon.png', package="sphereplot")
+    }else{
+      stop('Texture not found in sphereplot!')
     }
   }
   
