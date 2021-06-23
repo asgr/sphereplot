@@ -48,16 +48,17 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
   #sel_lat = rotdata_sph[,2] >= min(lat1, lat2) & rotdata_sph[,2] <= max(lat1, lat2)
   
   sel_data = (rotdata[,1] - u[1])^2 + (rotdata[,2] - u[2])^2 + (rotdata[,3] - u[3])^2 < Sep3D
-  sel_data = sel_data & ((rotdata[,1] - v[1])^2 + (rotdata[,2] - v[2])^2 + (rotdata[,3] - v[3])^2 < Sep3D)
+  sel_data = which(sel_data & ((rotdata[,1] - v[1])^2 + (rotdata[,2] - v[2])^2 + (rotdata[,3] - v[3])^2 < Sep3D))
     
-  segment = rotdata[sel_data,]
-  ordercheck = rotdata_sph[sel_data,]
+  segment = rotdata[sel_data,,drop=FALSE]
   
-  if(max(ordercheck[,1]) - min(ordercheck[,1]) > 180){
-    ordercheck[,1] = ordercheck[,1] %% 360
+  if(length(sel_data) > 1){
+    ordercheck = rotdata_sph[sel_data,]
+    if(max(ordercheck[,1]) - min(ordercheck[,1]) > 180){
+      ordercheck[,1] = ordercheck[,1] %% 360
+    }
+    segment = segment[order(ordercheck[,1], decreasing=FALSE),]
   }
-  
-  segment = segment[order(ordercheck[,1], decreasing=FALSE),]
   
   if(long1 < long2){
     segment = rbind(sph2car(long1, lat1, radius), segment, sph2car(long2, lat2, radius))
@@ -72,6 +73,7 @@ rgl.sphline = function(long1, lat1, long2, lat2, radius=1, deg=TRUE, col='black'
 
 rgl.sphlines = function(long, lat, ...){
   for(i in 1:(length(long) - 1)){
+    print(i)
     rgl.sphline(long[i], lat[i], long[i+1], lat[i+1], ...)
   }
   return(NULL)
