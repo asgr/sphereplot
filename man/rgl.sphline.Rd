@@ -3,6 +3,8 @@
 \alias{rgl.sphlines}
 \alias{rgl.seglong}
 \alias{rgl.seglat}
+\alias{rgl.segbox}
+
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Draw Great and Minor Circle Line Segments  
@@ -15,6 +17,7 @@ rgl.sphline(long1, lat1, long2, lat2, radius = 1, deg = TRUE, col = "black", res
 rgl.sphlines(long, lat, ...)
 rgl.seglong(long1, long2, lat, radius=1, deg=TRUE, col='black', res=1000, ...)
 rgl.seglat(long, lat1, lat2, radius=1, deg=TRUE, col='black', res=1000, ...)
+rgl.segbox(long1, long2, lat1, lat2, radius=1, deg=TRUE, col='black', res=1000, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -58,7 +61,11 @@ The main difference between \code{rgl.sphline} and \code{rgl.sphlines} is that t
 \value{
 \code{rgl.sphline} and \code{rgl.sphlines} are called for the side effect of plotting on the current sphere.
 
-\code{rgl.seglong} draws longitude lines of constant latitude (technically minor circle arcs), whilst \code{rgl.seglong} draws latitude lines of constant longitude (grear circle arcs).
+\code{rgl.seglong} draws longitude lines of constant latitude (technically minor circle arcs, except at the equator).
+
+\code{rgl.seglat} draws latitude lines of constant longitude (great circle arcs).
+
+\code{rgl.segbox} draws boxes with the specified longitude and latitude limits.
 
 \code{rgl.sphline} also returns various diagnostic outputs:
 
