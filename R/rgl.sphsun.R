@@ -1,4 +1,4 @@
-rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunrad=0.02, addeclip=TRUE, addsun=TRUE){
+rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunrad=0.02, addeclip=TRUE, addsun=TRUE, ...){
     if(addsun){
         if(Ydate[1]=='get'){Ydate=c(format(Sys.Date(), "%m"),format(Sys.Date(), "%d"));Ydate=as.numeric(Ydate)}
         year = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
@@ -13,6 +13,6 @@ rgl.sphsun=function (Ydate = c(3, 21), radius = 1, col='yellow', type='s', sunra
         plot3d(sph2car(sunloc,deg=TRUE),type=type,col=col,radius=sunrad,add=TRUE)
         .draw()
     }
-    if(addeclip){rgl.sphcirc(CrossEq = 0, PeakDec = 23.4,col=col,radius=radius)}
+    if(addeclip){rgl.sphcirc(CrossEq = 0, PeakDec = 23.4,col=col,radius=radius, ...)}
 }
 

@@ -9,7 +9,7 @@ This function overplots the ecliptic plane on the default Equatorial coordinates
 }
 \usage{
 rgl.sphsun(Ydate = c(3, 21), radius = 1, col = "yellow", type = "s", sunrad = 0.02,
-addeclip = TRUE, addsun = TRUE)
+addeclip = TRUE, addsun = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,6 +33,9 @@ Should the ecliptic plane be drawn.
 }
   \item{addsun}{
 Should the location of the Sun be plotted.
+}
+  \item{\dots}{
+Extra arguments for lines3d.  
 }
 }
 \value{

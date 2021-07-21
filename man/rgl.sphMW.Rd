@@ -8,7 +8,7 @@ Plot Galactic plane + Galactic centre
 This function overplots the Galactic plane on the default Equatorial coordinates, and optionally will add the Galactic centre.
 }
 \usage{
-rgl.sphMW(radius = 1, col = "purple", type = "s", MWcenrad = 0.02, addMWplane = TRUE)
+rgl.sphMW(radius = 1, col = "purple", type = "s", MWcenrad = 0.02, addMWplane = TRUE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,6 +26,9 @@ The radius of the Galactic centre if plotted as a sphere.
 }
   \item{addMWplane}{
 Should the Galactic plane be drawn.
+}
+  \item{\dots}{
+Extra arguments for lines3d.  
 }
 }
 
