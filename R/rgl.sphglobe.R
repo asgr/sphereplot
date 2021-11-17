@@ -1,65 +1,61 @@
-rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TRUE, lit=FALSE, texture=NULL, ...){
+rgl.sphglobe = function(type = 'sky1', radius=1, res=100, alpha=0.99999, grid=TRUE, lit=FALSE, texture=NULL, longshift = 0, longtype = 'D', ...){
   
   if(is.null(texture)){
     type = tolower(type)
     if(type=='sky1'){
       longshift = 0
-      longtype = 'D'
       if(radius=='auto'){
         radius = 1
       }
       texture = system.file("extdata", 'sky1.png', package="sphereplot")
     }else if(type=='sky2'){
       longshift = 0
-      longtype = 'D'
       if(radius=='auto'){
         radius = 1
       }
       texture = system.file("extdata", 'sky2.png', package="sphereplot")
     }else if(type=='world1' | type=='earth1'){
       longshift = 0
-      longtype = 'D'
       if(radius=='auto'){
         radius = 6371
       }
       texture = system.file("extdata", 'world1.png', package="sphereplot")
     }else if(type=='world2' | type=='earth2'){
       longshift = 0
-      longtype = 'D'
       if(radius=='auto'){
         radius = 6371
       }
       texture = system.file("extdata", 'world2.png', package="sphereplot")
     }else if(type=='world3' | type=='earth3'){
       longshift = 10
-      longtype = 'D'
       if(radius=='auto'){
         radius = 6371
       }
       texture = system.file("extdata", 'world3.png', package="sphereplot")
     }else if(type=='cmb' | type=='cmb_gal'){
       longshift = 0
-      longtype = 'H'
       if(radius=='auto'){
         radius = 13.8
       }
       texture = system.file("extdata", 'cmb_gal.png', package="sphereplot")
     }else if(type=='cmb_eq'){
       longshift = 0
-      longtype = 'H'
       if(radius=='auto'){
         radius = 13.8
       }
       texture = system.file("extdata", 'cmb_eq.png', package="sphereplot")
     }else if(type=='moon'){
       longshift = 0
-      longtype = 'D'
       if(radius=='auto'){
         radius = 1
       }
       texture = system.file("extdata", 'moon.png', package="sphereplot")
     }else{
       stop('Texture not found in sphereplot!')
+    }
+  }else{
+    if(radius=='auto'){
+      radius = 1
     }
   }
   

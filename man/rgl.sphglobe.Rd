@@ -9,7 +9,7 @@ Plots a background map of either the World (our Earth), night sky, or the Planck
 }
 \usage{
 rgl.sphglobe(type = "sky1", radius = 1, res = 100, alpha = 0.99999, grid = TRUE,
-  lit = FALSE, texture = NULL, ...)
+  lit = FALSE, texture = NULL, longshift = 0, longtype = 'D', ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,6 +33,12 @@ Logical; illuminate the globe?
 }
   \item{texture}{
 Character scalar; path to a texture to wrap onto the globe. This needs to be a rectangular projection to display correctly. 
+}
+  \item{longshift}{
+Shift to make to the texture in degrees along the longitude dimension. Many images are centred at either 0 or 180, where the default of 0 assumes 0 degrees longitude is at the centre of the texture. Only relevant if user provides input to \option{texture}.   
+}
+  \item{longtype}{
+Specifies if longitudes should be labelled in hours (H- default) or degrees (D). See \code{\link{rgl.sphgrid}}.
 }
   \item{\dots}{
 Extra arguments for \code{\link{rgl.sphgrid}}.
