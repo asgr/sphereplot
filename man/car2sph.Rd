@@ -45,5 +45,5 @@ print(car2sph(x=1,y=1,z=0,deg=TRUE))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{transform}
+\concept{transform}
 

@@ -45,4 +45,4 @@ print(sph2car(45,0,sqrt(2),deg=TRUE))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{transform}
+\concept{transform}

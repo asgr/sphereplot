@@ -13,7 +13,8 @@ Draw Great and Minor Circle Line Segments
 Given points on a sphere, these functions will draw the connecting great and minor circle minimum distance line connecting them.
 }
 \usage{
-rgl.sphline(long1, lat1, long2, lat2, radius = 1, deg = TRUE, col = "black", res = 1000, ...)
+rgl.sphline(long1, lat1, long2, lat2, radius = 1, deg = TRUE, col = "black", res = 1000,
+  ...)
 rgl.sphlines(long, lat, ...)
 rgl.seglong(long1, long2, lat, radius=1, deg=TRUE, col='black', res=1000, ...)
 rgl.seglat(long, lat1, lat2, radius=1, deg=TRUE, col='black', res=1000, ...)

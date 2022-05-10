@@ -53,5 +53,5 @@ rgl.sphcirc(radius=0.5,col='blue')
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{circle}
+\concept{circle}
 

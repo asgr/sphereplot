@@ -62,10 +62,12 @@ Aaron Robotham
 \code{\link{rgl.sphgrid}}, \code{\link{rgl.sphline}}
 }
 \examples{
+\dontrun{
 rgl.sphglobe('world1')
 rgl.sphglobe('world2')
 rgl.sphglobe('world3')
 rgl.sphglobe('sky1')
 rgl.sphglobe('sky2')
 rgl.sphglobe('cmb')
+}
 }
