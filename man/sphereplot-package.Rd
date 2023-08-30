@@ -12,8 +12,8 @@ Various low level and high level routines for generate spherical plots. Includes
 \tabular{ll}{
 Package: \tab sphereplot\cr
 Type: \tab Package\cr
-Version: \tab 2.0.7\cr
-Date: \tab 2022-05-10\cr
+Version: \tab 2.0.8\cr
+Date: \tab 2023-08-30\cr
 License: \tab GPL-3\cr
 }
 Standard usage is to run rgl.sphgrid to make the 3D coordinate grid, then add points using rgl.sphpoints.
